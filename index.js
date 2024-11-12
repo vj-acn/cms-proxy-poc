@@ -1,7 +1,12 @@
 const express = require('express');
+var cors = require('cors')
+
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
+
+app.use(cors())
+
 
 /** @type {import('http-proxy-middleware/dist/types').RequestHandler<express.Request, express.Response>} */
 const exampleProxy = createProxyMiddleware({
